@@ -1,15 +1,16 @@
 const os = require('os');
 const fs = require('fs');
 
-const gender = ['m' ,'k'];
+const gender = ['mężczyzna' ,'kobieta','atakujący helikopter szturmowy'];
 const maleNames = ['Michał', 'Piotr', 'Kacper', 'Edmund'];
-const femaleNames = ['Dorota', 'Maria', 'Julia'];
-const lastNames = ['Hajduk', 'Czerwik', 'Kamińska/i'];
+const femaleNames = ['Dorota', 'Maria', 'Julia', 'Ola'];
+const lastNames = ['Hajduk', 'Czerwik', 'Kamińska/i', 'Pałka'];
 const domen = ['gmail.com', 'onet.pl', 'e3.pl', 'wsti.pl'];
+const ahnames = ['Bell', 'Northrop', 'TAI', 'Blackbird']
 const people = [];
 const mail = [];
-const minAge = 15; // minimalny wiek
-const numberRecord = 100; // ilość rekordów do wygenerowania
+const minAge = 10; // minimalny wiek
+const numberRecord = 10; // ilość rekordów do wygenerowania
 const PhoneNumberSeparator = '-';
 
 function randChoice(arr) {
@@ -20,12 +21,16 @@ function randChoice(arr) {
 }
 
 function randName(arr) {
-    if (arr == 'k') {
+    if (arr == 'kobieta') {
         const choiceName = randChoice(femaleNames);
         return choiceName;
     }
-    if (arr == 'm') {
+    if (arr == 'mężczyzna') {
         const choiceName = randChoice(maleNames);
+        return choiceName;
+    }
+    if (arr == 'atakujący helikopter szturmowy') {
+        const choiceName = randChoice(ahnames);
         return choiceName;
     }
     else {
